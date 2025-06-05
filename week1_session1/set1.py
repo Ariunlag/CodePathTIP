@@ -36,7 +36,15 @@ def count_less_than(race_times, threshold):
     for time in race_times:
         if time < threshold:
             count+=1
-    return count
+    print(count) 
+
+def print_todo_list(task):
+    print ("Pooh's To Dos:")
+    for i, t in enumerate (task, start=1):
+        print(f'{i}. {t}')
+
+def can_pair(item_quantities):
+    
 
 
 
@@ -77,3 +85,9 @@ if __name__ == "__main__":
     race_times = []
     threshold = 4
     count_less_than(race_times, threshold)
+
+    task = ["Count all the bees in the hive", "Chase all the clouds from the sky", "Think", "Stoutness Exercises"]
+    print_todo_list(task)
+
+    task = []
+    print_todo_list(task)
