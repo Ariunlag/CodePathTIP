@@ -44,9 +44,32 @@ def print_todo_list(task):
         print(f'{i}. {t}')
 
 def can_pair(item_quantities):
-    
+    for item in item_quantities:
+        if item %2 !=0:
+            return False
+    return True
 
+def split_haycorns(quantity):
+    ans = []
+    for i in range(1, quantity+1):
+        if quantity % i ==0:
+            ans.append(i)
+    print(ans)
 
+def tiggerfy(s):
+    tigger_set = {'T', 't', 'I','i', 'G','g', 'E','e', 'R','r'}
+    ans=''
+    for letter in s:
+        if letter not in tigger_set:
+            ans+=letter
+    print(ans)
+
+def locate_thistles(items):
+    ans=[]
+    for index, item in enumerate(items):
+        if item == 'thistle':
+            ans.append(index)
+    print(ans)
 
 if __name__ == "__main__":
     welcome()
@@ -91,3 +114,33 @@ if __name__ == "__main__":
 
     task = []
     print_todo_list(task)
+
+    item_quantities = [2, 4, 6, 8]
+    can_pair(item_quantities)
+
+    item_quantities = [1, 2, 3, 4]
+    can_pair(item_quantities)
+
+    item_quantities = []
+    can_pair(item_quantities)
+
+    quantity = 6
+    split_haycorns(quantity)
+
+    quantity = 1
+    split_haycorns(quantity)
+
+    s = "suspicerous"
+    tiggerfy(s)
+
+    s = "Trigger"
+    tiggerfy(s)
+
+    s = "Hunny"
+    tiggerfy(s)
+
+    items = ["thistle", "stick", "carrot", "thistle", "eeyore's tail"]
+    locate_thistles(items)
+
+    items = ["book", "bouncy ball", "leaf", "red balloon"]
+    locate_thistles(items)
